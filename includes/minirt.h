@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/15 18:34:30 by famacama          #+#    #+#             */
-/*   Updated: 2020/10/15 22:36:27 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/10/22 20:45:26 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ typedef struct	s_mlx
 	t_img		img;
 }				t_mlx;
 
-
+int ft_square(int x);
 
 #endif

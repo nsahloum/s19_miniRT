@@ -1,3 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/10/22 19:34:36 by nsahloum          #+#    #+#              #
+#    Updated: 2020/10/22 20:49:06 by nsahloum         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
+
 CC =			gcc 
 
 FLAGS =			-Wall -Wextra -Werror 
@@ -11,7 +25,7 @@ DIR_SRCS =		./srcs/
 
 DIR_OBJS =		./
 
-SRC =			minirt.c
+SRC =			minirt.c utils.c
 
 SRCS =			$(addprefix $(DIR_SRCS), $(SRC))
 
