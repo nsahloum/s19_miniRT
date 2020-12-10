@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/10 19:07:39 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/10 23:17:56 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <math.h>
 //#include "../minilibx_mms/mlx.h"
-#include "../minilibx_opengl/mlx.h"
+#include "../lib/minilibx_opengl/mlx.h"
 //#include "minilibx-linux/mlx_int.h"
 
 

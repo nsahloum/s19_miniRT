@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/22 19:34:36 by nsahloum          #+#    #+#              #
-#    Updated: 2020/12/10 19:13:33 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/12/10 23:18:34 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ all:			$(NAME)
 
 $(NAME) :		$(OBJS)
 				#@make -C ./minilibx_mms
-				@make -C ./minilibx_opengl
-				mv ./minilibx_opengl/libmlx.a .
+				@make -C ./lib/minilibx_opengl
+				mv ./lib/minilibx_opengl/libmlx.a .
 				#@cp ./minilibx_mms/libmlx.dylib libmlx.dylib
 				#@cp ./minilibx_opengl/libmlx.a libmlx.a
 				$(CC) $(COMPIL) $(LDFLAGS) -I $(DIR_HEADERS) $(OBJS) -o $(NAME)
@@ -58,7 +58,7 @@ clean:
 
 fclean:			clean
 				#@make clean -C ./minilibx_mms
-				@make clean -C ./minilibx_opengl
+				@make clean -C ./lib/minilibx_opengl
 				$(RM) libmlx.dylib
 				$(RM) libmlx.a
 				$(RM) $(NAME)
