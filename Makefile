@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/22 19:34:36 by nsahloum          #+#    #+#              #
-#    Updated: 2020/12/10 19:08:03 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/12/10 19:13:33 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,6 @@ $(NAME) :		$(OBJS)
 				@gcc $(FLAGS) -I $(DIR_HEADERS) -c $< -o $@
 				@echo "Compiled "$<" successfully!"
 
-bonus:
-
 norme:
 				norminette $(DIR_SRCS)
 				norminette $(DIR_HEADERS)
@@ -67,4 +65,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all, clean, fclean, re, bonus
+.PHONY:			all, clean, fclean, re
