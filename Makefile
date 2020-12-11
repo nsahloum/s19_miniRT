@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/22 19:34:36 by nsahloum          #+#    #+#              #
-#    Updated: 2020/12/10 23:18:34 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/12/11 00:38:49 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ DIR_SRCS =		./srcs/
 
 DIR_OBJS =		./
 
-SRC =			minirt.c utils.c sphere.c
+SRC =			minirt.c utils.c sphere.c \
+				get_next_line.c \
+				get_next_line_utils.c \
 
 SRCS =			$(addprefix $(DIR_SRCS), $(SRC))
 
