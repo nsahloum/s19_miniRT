@@ -6,12 +6,11 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/11 01:03:10 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/11 19:16:15 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
-#include "stdio.h"
 
 int ft_treat_line(char *line)
 {
