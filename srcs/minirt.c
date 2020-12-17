@@ -6,19 +6,26 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/11 19:16:15 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/17 16:22:24 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-int ft_treat_line(char *line)
+int ft_good_fnt(char *line)
 {
-	if (line[0] == 'R')
+	static char	tab_id[2] = {'R', 0};
+	int i;
+	char c;
+
+	c = line[0];
+	i = 0;
+	while (tab_id[i])
 	{
-		ft_sphere(g_mlx);
-		return (1);
-	}
+		if (tab_id[i] == c)
+			return(i);
+		i++;
+	} 	
 	return (0);
 }
 
@@ -32,13 +39,12 @@ void ft_read(int argc, char **argv)
 	argc = 2;
 	while (((ret = get_next_line(fd, &line)) > 0) && (ft_treat_line(line) == 0))
 	{
-		ft_treat_line(line);
+		g_tab_func[ft_good_fnt(line)](line);
 		free(line);
 	}
-	ft_treat_line(line);
+	g_tab_func[ft_good_fnt(line)](line);
 	free(line);
 	close(fd);
-	
 }
 
 int main(int argc, char **argv)

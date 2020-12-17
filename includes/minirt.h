@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/11 19:35:01 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/17 16:21:24 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ typedef struct	s_mlx
 
 t_mlx g_mlx;
 
+typedef struct s_ambiance
+{
+    int resolution_x;
+    int resolution_y;
+}   t_ambiance;
+
 int ft_square(int x);
 void ft_sphere(t_mlx mlx);
+void ft_resolution(char *resolution);
+
+static void (*g_tab_func[1]) (char) = {&ft_resolution};
 #endif
