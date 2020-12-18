@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 19:49:44 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/11 00:19:53 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/18 02:14:02 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_read_file(char *str, int fd)
 	{
 		buff[ret] = '\0';
 		tmp = str;
-		str = ft_strjoin(tmp, buff);
+		str = ft_strjoing(tmp, buff);
 		free(tmp);
 		while (str[i])
 		{
@@ -58,13 +58,13 @@ int		get_next_line(int fd, char **line)
 	if (str[fd] == NULL || ft_strchrn(str[fd]) == 0)
 		str[fd] = ft_read_file(str[fd], fd);
 	if (str[fd] == NULL)
-		return (*line = ft_strdup("")) != NULL ? 0 : -1;
+		return (*line = ft_strdupg("")) != NULL ? 0 : -1;
 	i = ft_until_n(str[fd]);
-	*line = ft_substr(str[fd], 0, i);
+	*line = ft_substrg(str[fd], 0, i);
 	if (str[fd] != NULL && str[fd][i] == '\n')
 	{
 		tmp = str[fd];
-		str[fd] = ft_substr(tmp, i + 1, ft_strlen(tmp));
+		str[fd] = ft_substrg(tmp, i + 1, ft_strleng(tmp));
 		free(tmp);
 		return (1);
 	}

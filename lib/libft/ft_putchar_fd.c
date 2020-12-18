@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ambiance.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:29:32 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/15 15:39:04 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/21 17:37:03 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
-#include "stdio.h"
+#include "libft.h"
 
-void ft_resolution(char *resolution)
+void	ft_putchar_fd(char c, int fd)
 {
-	int i;
-
-	i = 0;
-	while (ft_isdigit(resolution[i]) == 0)
-		i++;
-    g_amb.res_x = ft_atoi(&resolution[i]);
-	while (ft_isdigit(resolution[i]))
-		i++;
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	if (fd >= 0 && fd < OPEN_MAX)
+		write(fd, &c, 1);
 }

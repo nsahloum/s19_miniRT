@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ambiance.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:29:32 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/08 18:25:30 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/20 17:43:02 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
-#include "stdio.h"
+#include "libft.h"
 
-void ft_resolution(char *resolution)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int		k;
+	char	*s_cpy;
 
-	i = 0;
-	while (ft_isdigit(resolution[i]) == 0)
-		i++;
-    g_amb.res_x = ft_atoi(&resolution[i]);
-	while (ft_isdigit(resolution[i]))
-		i++;
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	if (!s)
+		return (0);
+	s_cpy = (char *)s;
+	k = (ft_strlen(s) - 1);
+	if (c == 0)
+		return (&s_cpy[k + 1]);
+	while (k >= 0)
+	{
+		if (s_cpy[k] == c)
+			return (&s_cpy[k]);
+		k--;
+	}
+	return (0);
 }

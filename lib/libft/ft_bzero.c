@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ambiance.c                                         :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:29:32 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/06 18:41:32 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/21 13:19:18 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
-#include "stdio.h"
+#include "libft.h"
 
-void ft_resolution(char *resolution)
+void	ft_bzero(void *s, size_t n)
 {
-	int i;
+	size_t			i;
+	unsigned char	*dest;
 
-	i = 0;
-	while (ft_isdigit(resolution[i]) == 0)
-		i++;
-    g_amb.res_x = ft_atoi(&resolution[i]);
-	while (ft_isdigit(resolution[i]))
-		i++;
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	if (s)
+	{
+		i = 0;
+		dest = (unsigned char *)s;
+		while (i < n)
+		{
+			dest[i] = 0;
+			i++;
+		}
+	}
 }

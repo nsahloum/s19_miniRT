@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ambiance.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:29:32 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/13 12:04:38 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/20 13:19:59 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
-#include "stdio.h"
+#include "libft.h"
 
-void ft_resolution(char *resolution)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int i;
+	void *tab;
 
-	i = 0;
-	while (ft_isdigit(resolution[i]) == 0)
-		i++;
-    g_amb.res_x = ft_atoi(&resolution[i]);
-	while (ft_isdigit(resolution[i]))
-		i++;
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	if (!(tab = malloc(nmemb * size)))
+		return (NULL);
+	ft_bzero(tab, (nmemb * size));
+	return (tab);
 }

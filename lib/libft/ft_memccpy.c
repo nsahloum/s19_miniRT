@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ambiance.c                                         :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:29:32 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/07 11:59:04 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/21 19:14:04 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
-#include "stdio.h"
+#include "libft.h"
 
-void ft_resolution(char *resolution)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	int i;
+	size_t			i;
+	unsigned char	*src_cpy;
+	unsigned char	*dest_cpy;
 
+	if (!dest || !src)
+		return (0);
+	src_cpy = (unsigned char *)src;
+	dest_cpy = (unsigned char *)dest;
 	i = 0;
-	while (ft_isdigit(resolution[i]) == 0)
+	while (i < n)
+	{
+		dest_cpy[i] = src_cpy[i];
+		if (src_cpy[i] == (unsigned char)c)
+		{
+			return (&dest[i + 1]);
+		}
 		i++;
-    g_amb.res_x = ft_atoi(&resolution[i]);
-	while (ft_isdigit(resolution[i]))
-		i++;
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	}
+	return (0);
 }

@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ambiance.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:29:32 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/10 13:48:47 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/21 17:34:54 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
-#include "stdio.h"
+#include "libft.h"
 
-void ft_resolution(char *resolution)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
+	size_t l;
+	size_t b;
 
-	i = 0;
-	while (ft_isdigit(resolution[i]) == 0)
-		i++;
-    g_amb.res_x = ft_atoi(&resolution[i]);
-	while (ft_isdigit(resolution[i]))
-		i++;
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	if (!ft_strlen(needle) || !haystack)
+		return ((char *)haystack);
+	b = 0;
+	while (haystack[b] && b < len)
+	{
+		l = 0;
+		while (needle[l] && haystack[b + l] && needle[l] == haystack[b + l]
+			&& (b + l) < len)
+			l++;
+		if (!needle[l])
+			return ((char*)&haystack[b]);
+		b++;
+	}
+	return (0);
 }

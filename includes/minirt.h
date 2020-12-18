@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/17 16:21:24 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/18 01:22:17 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@
 #include "get_next_line.h"
 //#include "../minilibx_mms/mlx.h"
 #include "../lib/minilibx_opengl/mlx.h"
+#include "../lib/libft/libft.h"
 //#include "minilibx-linux/mlx_int.h"
-
-
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
 
 typedef struct	s_img
 {
@@ -43,13 +40,15 @@ t_mlx g_mlx;
 
 typedef struct s_ambiance
 {
-    int resolution_x;
-    int resolution_y;
+    int res_x;
+    int res_y;
 }   t_ambiance;
+
+t_ambiance g_amb;
 
 int ft_square(int x);
 void ft_sphere(t_mlx mlx);
 void ft_resolution(char *resolution);
 
-static void (*g_tab_func[1]) (char) = {&ft_resolution};
+static void (*g_tab_func[1]) (char *) = {&ft_resolution};
 #endif

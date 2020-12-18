@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ambiance.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:29:32 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/01/17 13:31:56 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/01/21 12:12:06 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
-#include "stdio.h"
+#include "libft.h"
 
-void ft_resolution(char *resolution)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
+	unsigned int	i;
+	char			*tmp;
 
+	if (!s || !f)
+		return (NULL);
+	if (!(tmp = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
 	i = 0;
-	while (ft_isdigit(resolution[i]) == 0)
+	while (s[i])
+	{
+		tmp[i] = f(i, (char)s[i]);
 		i++;
-    g_amb.res_x = ft_atoi(&resolution[i]);
-	while (ft_isdigit(resolution[i]))
-		i++;
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	}
+	tmp[i] = '\0';
+	return (tmp);
 }

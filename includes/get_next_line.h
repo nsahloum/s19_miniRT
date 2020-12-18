@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 20:04:33 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/02/11 19:23:26 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/18 02:13:31 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-char		*ft_strcpy(char *dest, char *src);
-char		*ft_strcat(char *dest, char *src);
-char		*ft_strjoin(char const *s1, char const *s2);
-char		*ft_substr(char *s, unsigned int start, size_t len);
+char		*ft_strcpyg(char *dest, char *src);
+char		*ft_strcatg(char *dest, char *src);
+char		*ft_strjoing(char const *s1, char const *s2);
+char		*ft_substrg(char *s, unsigned int start, size_t len);
 int			get_next_line(int fd, char **line);
-size_t		ft_strlen(const char *s);
+size_t		ft_strleng(const char *s);
 char		*ft_read_file(char *str, int fd);
 int			ft_strchrn(char *str);
-char		*ft_strdup(const char *src);
+char		*ft_strdupg(const char *src);
 int			ft_until_n(char *str);
 
 # ifndef BUFFER_SIZE
