@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 17:47:02 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/22 15:44:50 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/12/26 19:42:05 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/12/26 19:43:43 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	long	n;
-	int		neg;
-
-	neg = 0;
-	n = 0;
-	if (!str)
-		return (0);
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '+' || *str == '-')
-		if (*str++ == '-')
-			neg = 1;
-	while (ft_isdigit(*str))
+	if (!lst || !f)
+		return ;
+	while (lst != NULL)
 	{
-		n = (n * 10) + *str++ - 48;
-		if (n < 0)
-			return ((neg) ? 0 : -1);
+		(f)(lst->content);
+		lst = lst->next;
 	}
-	return ((neg) ? -n : n);
 }

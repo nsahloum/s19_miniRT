@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 11:40:31 by nsahloum          #+#    #+#              #
-#    Updated: 2020/03/03 13:47:09 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/12/26 19:49:41 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,17 @@ SRCS	= 	ft_isalnum.c 	\
 			ft_putnbr_base_fd.c \
 			ft_split.c		\
 			ft_strmapi.c	\
+			ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			
+			
+			
 
 OBJS	= ${SRCS:.c=.o}
 

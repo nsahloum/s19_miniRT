@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 01:22:17 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/23 22:11:49 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ typedef struct s_ambiance
 {
     int res_x;
     int res_y;
+	int ambli_ratio;
+	int ambli_r;
+	int ambli_g;
+	int ambli_b;
 }   t_ambiance;
 
 t_ambiance g_amb;
@@ -49,6 +53,9 @@ t_ambiance g_amb;
 int ft_square(int x);
 void ft_sphere(t_mlx mlx);
 void ft_resolution(char *resolution);
+void ft_ambli(char *ambli);
+int	ft_skip_digit(char *chaine);
+int ft_skip_letter(char *chaine);
 
-static void (*g_tab_func[1]) (char *) = {&ft_resolution};
+static void (*g_tab_func[2]) (char *) = {&ft_resolution, &ft_ambli};
 #endif

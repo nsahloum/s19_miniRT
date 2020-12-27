@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 17:47:02 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/22 15:44:50 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/12/26 19:43:59 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/12/26 19:46:50 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	long	n;
-	int		neg;
+	t_list	*dst;
+	t_list	*first;
 
-	neg = 0;
-	n = 0;
-	if (!str)
-		return (0);
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '+' || *str == '-')
-		if (*str++ == '-')
-			neg = 1;
-	while (ft_isdigit(*str))
+	if (!lst || !f)
+		return (NULL);
+	if (!(dst = ft_lstnew(f(lst->content))))
+		return (NULL);
+	first = dst;
+	while (lst)
 	{
-		n = (n * 10) + *str++ - 48;
-		if (n < 0)
-			return ((neg) ? 0 : -1);
+		if (lst->next)
+		{
+			if (!(dst->next = ft_lstnew(f(lst->next->content))))
+			{
+				ft_lstclear(&first, del);
+				return (0);
+			}
+			dst = dst->next;
+		}
+		lst = lst->next;
 	}
-	return ((neg) ? -n : n);
+	dst->next = NULL;
+	return (first);
 }

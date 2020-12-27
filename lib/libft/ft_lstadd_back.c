@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 17:47:02 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/01/22 15:44:50 by nsahloum         ###   ########.fr       */
+/*   Created: 2020/12/26 18:05:15 by nsahloum          #+#    #+#             */
+/*   Updated: 2020/12/26 18:05:27 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	long	n;
-	int		neg;
-
-	neg = 0;
-	n = 0;
-	if (!str)
-		return (0);
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '+' || *str == '-')
-		if (*str++ == '-')
-			neg = 1;
-	while (ft_isdigit(*str))
-	{
-		n = (n * 10) + *str++ - 48;
-		if (n < 0)
-			return ((neg) ? 0 : -1);
-	}
-	return ((neg) ? -n : n);
+	if (!(alst))
+		return ;
+	if (!(*alst))
+		*alst = new;
+	ft_lstlast(*alst)->next = new;
+	new->next = NULL;
 }
