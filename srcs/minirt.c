@@ -6,16 +6,17 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/18 02:51:22 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/28 02:24:17 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
-#include "stdio.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int ft_good_fnt(char *line)
 {
-	static char	tab_id[3] = {'R', 'A', 0};
+	static char	tab_id[4] = {'R', 'A', 'c', 0};
 	int i;
 	char c;
 
@@ -47,7 +48,30 @@ void ft_read(int argc, char **argv)
 	close(fd);
 }
 
-int main(int argc, char **argv)
+// void ft_write(int num)
+// {
+// 	FILE * fd;
+// 	fd = fopen("rep.txt","w");
+// 	fprintf(fd, "%d", num);
+//    	fclose(fd);
+// }
+
+void ft_write(int num,...)
+{
+	FILE * fd;
+	fd = fopen("rep.txt","w");
+	va_list	argp;
+	va_start(argp, num);
+	while (num > 0)
+	{
+		fprintf(fd, "%d\n", va_arg(argp, int));
+		num--;
+	}
+	va_end(argp);
+   	fclose(fd);
+}
+
+int main(void)
 {
 	g_mlx.mlx_ptr = mlx_init();
 	ft_read(argc, argv);

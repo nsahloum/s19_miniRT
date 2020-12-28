@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 11:40:31 by nsahloum          #+#    #+#              #
-#    Updated: 2020/12/26 19:49:41 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/12/28 02:22:35 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SRCS	= 	ft_isalnum.c 	\
 			ft_lstlast.c \
 			ft_lstmap.c \
 			ft_lstnew.c \
+			ft_atof.c \
 			
 			
 			

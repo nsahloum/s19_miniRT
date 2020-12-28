@@ -6,9 +6,11 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 20:43:46 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/23 22:11:38 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/28 00:02:42 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "minirt.h"
 
 int	ft_square(int x)
 {
@@ -20,7 +22,7 @@ int	ft_skip_digit(char *chaine)
 	int i;
 
 	i = 0;
-	while(ft_isdigit(chaine[i]))
+	while(ft_isdigit(chaine[i]) || chaine[i] == ',' || chaine[i] == '.')
 		i++;
 	return (i);
 }

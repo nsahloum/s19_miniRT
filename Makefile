@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/22 19:34:36 by nsahloum          #+#    #+#              #
-#    Updated: 2020/12/23 22:16:28 by nsahloum         ###   ########.fr        #
+#    Updated: 2020/12/28 02:11:11 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ clean:
 
 fclean:			clean
 				@make clean -C ./lib/minilibx_opengl
-				@make clean -C ./lib/libft
+				@make fclean -C ./lib/libft
 				$(RM) $(NAME)
 
 re:				fclean all
