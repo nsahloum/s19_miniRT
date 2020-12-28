@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/27 23:52:57 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/28 03:47:04 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,25 @@ t_mlx g_mlx;
 
 typedef struct s_ambiance
 {
-    int res_x;
-    int res_y;
-	float	ambli_ratio;
-	int ambli_r;
-	int ambli_g;
-	int ambli_b;
+    double res_x;
+    double res_y;
+	double	ambli_ratio;
+	double ambli_r;
+	double ambli_g;
+	double ambli_b;
 }   t_ambiance;
 
 t_ambiance g_amb;
 
 typedef struct s_camera
 {
-    int vue_x;
-	int vue_y;
-	int vue_z;
-	int vec_x;
-	int vec_y;
-	int vec_z;
-	int fov;
+    double vue_x;
+	double vue_y;
+	double vue_z;
+	double vec_x;
+	double vec_y;
+	double vec_z;
+	double fov;
 	struct s_camera *next;
 }   t_camera;
 
@@ -69,10 +69,10 @@ int ft_square(int x);
 void ft_sphere(t_mlx mlx);
 void ft_resolution(char *resolution);
 void ft_ambli(char *ambli);
-int	ft_skip_digit(char *chaine);
-int ft_skip_letter(char *chaine);
 void ft_camera(char *cam);
 void ft_write(int num,...);
+int	ft_skip_digit(char *chaine);
+int	ft_skip_letter(char *chaine);
 
 static void (*g_tab_func[3]) (char *) = {&ft_resolution, &ft_ambli, &ft_camera};
 #endif

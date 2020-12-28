@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/28 02:24:17 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/28 03:50:00 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,20 @@ void ft_write(int num,...)
 	va_start(argp, num);
 	while (num > 0)
 	{
-		fprintf(fd, "%d\n", va_arg(argp, int));
+		//fprintf(fd, "%s\n", va_arg(argp, char *));
+		fprintf(fd, "%f\n", va_arg(argp, double));
 		num--;
 	}
 	va_end(argp);
    	fclose(fd);
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
 	g_mlx.mlx_ptr = mlx_init();
 	ft_read(argc, argv);
-	g_mlx.win = mlx_new_window(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y, "najima_window");
-	g_mlx.img.img_ptr = mlx_new_image(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y);
+	g_mlx.win = mlx_new_window(g_mlx.mlx_ptr, (int)g_amb.res_x, (int)g_amb.res_y, "najima_window");
+	g_mlx.img.img_ptr = mlx_new_image(g_mlx.mlx_ptr, (int)g_amb.res_x, (int)g_amb.res_y);
 	g_mlx.img.data = (int *)mlx_get_data_addr(g_mlx.img.img_ptr, &g_mlx.img.bpp, &g_mlx.img.size_l, &g_mlx.img.endian);
 	mlx_put_image_to_window(g_mlx.mlx_ptr, g_mlx.win, g_mlx.img.img_ptr, 0, 0);
 	mlx_loop(g_mlx.mlx_ptr);

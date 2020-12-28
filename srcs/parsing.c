@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2020/12/28 00:03:14 by nsahloum         ###   ########.fr       */
+/*   Updated: 2020/12/28 03:48:26 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,29 @@ void ft_resolution(char *resolution)
 	
 	int i;
 
-	i = 0;
 	i = ft_skip_letter(resolution);
-    g_amb.res_x = ft_atoi(&resolution[i]);
+    g_amb.res_x = ft_atof(&resolution[i]);
 	i = i + ft_skip_digit(&resolution[i]);
-	g_amb.res_y = ft_atoi(&resolution[i]);
+	g_amb.res_y = ft_atof(&resolution[i]);
+	ft_write(2, g_amb.res_x, g_amb.res_y );
 	
 }
 
 void ft_ambli(char *ambli)
 {
 	int i;
-
+	
+	ft_write(1, ambli);
 	i = ft_skip_letter(ambli);
-    g_amb.ambli_ratio = ft_atoi(&ambli[i]);
+    g_amb.ambli_ratio = ft_atof(&ambli[i]);
 	i = i + ft_skip_digit(&ambli[i]);
-	g_amb.ambli_r = ft_atoi(&ambli[i]);
+	g_amb.ambli_r = ft_atof(&ambli[i]);
 	i = i + ft_skip_digit(&ambli[i]);
-	g_amb.ambli_g = ft_atoi(&ambli[i]);
+	g_amb.ambli_g = ft_atof(&ambli[i]);
 	i = i + ft_skip_digit(&ambli[i]);
-	g_amb.ambli_b = ft_atoi(&ambli[i]);
-	ft_write(4, g_amb.ambli_ratio, g_amb.ambli_r, g_amb.ambli_g, g_amb.ambli_b);
+	g_amb.ambli_b = ft_atof(&ambli[i]);
+	
+	
 }
 
 void ft_camera(char *cam)
