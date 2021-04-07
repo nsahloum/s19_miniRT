@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/08 01:12:44 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/08 01:51:04 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,37 +44,18 @@ typedef struct	s_mlx
 
 t_mlx g_mlx;
 
-typedef struct s_ambiance
+typedef struct s_sphere
 {
-    double res_x;
-    double res_y;
-	double	ambli_ratio;
-	double ambli_r;
-	double ambli_g;
-	double ambli_b;
-}   t_ambiance;
-
-t_ambiance g_amb;
-
-typedef struct s_camera
-{
-    double vue_x;
-	double vue_y;
-	double vue_z;
-	double vec_x;
-	double vec_y;
-	double vec_z;
-	double fov;
-	struct s_camera *next;
-}   t_camera;
+	
+}
 
 int ft_square(int x);
 void ft_sphere(t_mlx mlx);
 void ft_resolution(char *resolution);
-void ft_ambli(char *ambli);
-void ft_camera(char *cam);
 int	ft_skip_digit(char *chaine);
 int	ft_skip_letter(char *chaine);
+void ft_parse_sphere(char *sphere);
 
-//static void (*g_tab_func[3]) (char *) = {&ft_resolution, &ft_sphere};
+int g_sphere_active;
+
 #endif
