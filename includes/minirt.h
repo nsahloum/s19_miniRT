@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/06 02:15:53 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/08 01:12:44 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+
+# define WIN_WIDTH 800
+# define WIN_HEIGHT 600
 
 typedef struct	s_img
 {
@@ -73,5 +76,5 @@ void ft_camera(char *cam);
 int	ft_skip_digit(char *chaine);
 int	ft_skip_letter(char *chaine);
 
-static void (*g_tab_func[3]) (char *) = {&ft_resolution, &ft_ambli, &ft_camera};
+//static void (*g_tab_func[3]) (char *) = {&ft_resolution, &ft_sphere};
 #endif
