@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/08 01:52:48 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/08 01:53:48 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int main(int argc, char **argv)
 	ft_read(argc, argv);
 	g_mlx.win = mlx_new_window(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y, "nsahloum_window");
 	g_mlx.img.img_ptr = mlx_new_image(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y);
-	g_mlx.img.data = (int *)mlx_get_data_addr(g_mlx.img.img_ptr, &g_mlx.img.bpp, &g_mlx.img.size_l, &g_mlx.img.endian);
+	g_mlx.img.data = (int *)mlx_get_data_addr(g_mlx.img.img_ptr, &g_mlx.img.bpp, 
+	&g_mlx.img.size_l, &g_mlx.img.endian);
 	ft_sphere(g_mlx);
 	mlx_put_image_to_window(g_mlx.mlx_ptr, g_mlx.win, g_mlx.img.img_ptr, 0, 0);
 	mlx_loop(g_mlx.mlx_ptr);

@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/08 01:51:04 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/08 01:57:25 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,23 @@ typedef struct	s_mlx
 
 t_mlx g_mlx;
 
+typedef struct s_ambiance
+{
+    double res_x;
+    double res_y;
+}			t_ambiance;
+
+t_ambiance g_amb;
+
 typedef struct s_sphere
 {
-	
-}
+	double diam;
+	int color_r;
+	int color_g;
+	int color_b;
+}		t_sphere;
+
+t_sphere g_sphere;
 
 int ft_square(int x);
 void ft_sphere(t_mlx mlx);
