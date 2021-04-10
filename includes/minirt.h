@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/08 01:57:25 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/10 23:56:10 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,12 @@ typedef struct s_sphere
 t_sphere g_sphere;
 
 int ft_square(int x);
-void ft_sphere(t_mlx mlx);
+void ft_sphere(void);
 void ft_resolution(char *resolution);
 int	ft_skip_digit(char *chaine);
 int	ft_skip_letter(char *chaine);
 void ft_parse_sphere(char *sphere);
+void ft_make_scene(void);
 
 int g_sphere_active;
 
