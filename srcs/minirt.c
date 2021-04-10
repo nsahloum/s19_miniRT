@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/11 00:08:45 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/11 00:12:58 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void ft_read(int argc, char **argv)
 
 void ft_make_scene(void)
 {
-	printf("%d", g_sphere_active);
 	if (g_sphere_active == 1)
 		ft_sphere();
 }
@@ -63,7 +62,6 @@ int main(int argc, char **argv)
 	g_mlx.img.data = (int *)mlx_get_data_addr(g_mlx.img.img_ptr, &g_mlx.img.bpp, 
 	&g_mlx.img.size_l, &g_mlx.img.endian);
 	ft_make_scene();
-	printf("%d", g_sphere_active);
 	mlx_put_image_to_window(g_mlx.mlx_ptr, g_mlx.win, g_mlx.img.img_ptr, 0, 0);
 	mlx_loop(g_mlx.mlx_ptr);
 	return (0);
