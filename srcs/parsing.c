@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/11 00:22:54 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/17 23:25:04 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,22 @@ void ft_parse_sphere(char *sphere)
 {
 	int i;
 	i = 0;
-	g_sphere_active = 1;
-	while (ft_isalpha(sphere[i]))
+	while(ft_isalpha(sphere[i]))
 		i++;
-    g_sphere.diam = ft_atof(&sphere[i]);
-	i = i + 1 + ft_skip_digit(&sphere[i]);
-	g_sphere.color_r = ft_atoi(&sphere[i]);
+	g_sphere.s_x = ft_atof(&sphere[i]);
+	i = i + ft_skip_space(&sphere[i]);
+	i = i + ft_skip_digit(&sphere[i]) + 1;
+	g_sphere.s_y = ft_atof(&sphere[i]);
+	i = i + ft_skip_digit(&sphere[i]) + 1;
+	g_sphere.s_z = ft_atof(&sphere[i]);
+	i = i + ft_skip_digit(&sphere[i]);
+	i = i + ft_skip_space(&sphere[i]);
+	g_sphere.diam = ft_atof(&sphere[i]);
+	i = i + ft_skip_digit(&sphere[i]);
+	g_sphere.color_r = ft_atof(&sphere[i]);
+	i = i + ft_skip_space(&sphere[i]);
+	i = i + ft_skip_digit(&sphere[i]) + 1;
+	g_sphere.color_g = ft_atof(&sphere[i]);
+	i = i + ft_skip_digit(&sphere[i]) + 1;
+	g_sphere.color_b = ft_atof(&sphere[i]);
 }

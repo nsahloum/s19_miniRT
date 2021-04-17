@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 20:43:46 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/08 02:07:02 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/17 23:18:25 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,15 @@ int ft_skip_letter(char *chaine)
 	while(ft_isalpha(chaine[i]))
 		i++;
 	return (i);
+}
 
+int ft_skip_space(char *str)
+{
+	int i;
+
+	i = 0;
+
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	return(i);
 }
