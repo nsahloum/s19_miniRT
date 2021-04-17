@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/17 23:02:16 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/17 23:30:56 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int ft_good_fnt(char *line)
 	
 	if (line[0] == 'R')
 	 	ft_resolution(line);
+	if (line[0] == 'c')
+		ft_parse_camera(line);
 	if (line[0] == 's' && line[1] == 'p')
 	 	ft_parse_sphere(line);
 	return(0);

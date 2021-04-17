@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/17 23:19:01 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/17 23:36:42 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,16 @@ t_sphere g_sphere;
 
 typedef struct s_camera
 {
-	
+	double x;
+	double y;
+	double cam_z;
+	double norm_x;
+	double norm_y;
+	double norm_z;
+	double fov;
 }	t_camera;
 
+t_camera g_camera;
 
 int ft_square(int x);
 void ft_sphere(void);
@@ -78,6 +85,7 @@ int	ft_skip_digit(char *chaine);
 int	ft_skip_letter(char *chaine);
 int ft_skip_space(char *str);
 void ft_parse_sphere(char *sphere);
+void ft_parse_camera(char *camera);
 void ft_make_scene(void);
 
 int g_sphere_active;
