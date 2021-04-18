@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 20:43:46 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/17 23:18:25 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/18 16:48:48 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_skip_digit(char *chaine)
 	int i;
 
 	i = 0;
-	while(ft_isdigit(chaine[i]) || chaine[i] == '.')
+	while(ft_isdigit(chaine[i]) || chaine[i] == '.' || chaine[i] == '-')
 		i++;
 	return (i);
 }

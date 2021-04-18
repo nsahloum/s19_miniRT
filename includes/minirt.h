@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/17 23:36:42 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/18 16:31:35 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ typedef struct s_camera
 {
 	double x;
 	double y;
-	double cam_z;
+	double z;
 	double norm_x;
 	double norm_y;
 	double norm_z;
