@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/18 18:37:37 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/18 18:49:16 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,8 @@ int ft_skip_space(char *str);
 void ft_parse_sphere(char *sphere);
 void ft_parse_camera(char *camera);
 void ft_make_scene(void);
-int ft_coord_x(double x);
-int ft_coord_y(double y);
+double ft_coord_x(double x);
+double ft_coord_y(double y);
 
 int g_sphere_active;
 
