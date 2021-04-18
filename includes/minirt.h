@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/18 16:31:35 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/18 18:37:37 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 typedef struct	s_img
 {
     void        *img_ptr;
-    int         *data;
+    int    		*data;
     int         size_l;
     int         bpp;
     int         endian;
@@ -46,8 +46,8 @@ t_mlx g_mlx;
 
 typedef struct s_ambiance
 {
-    double res_x;
-    double res_y;
+    int res_x;
+    int res_y;
 }			t_ambiance;
 
 t_ambiance g_amb;
@@ -87,6 +87,8 @@ int ft_skip_space(char *str);
 void ft_parse_sphere(char *sphere);
 void ft_parse_camera(char *camera);
 void ft_make_scene(void);
+int ft_coord_x(double x);
+int ft_coord_y(double y);
 
 int g_sphere_active;
 

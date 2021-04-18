@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:05 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/17 23:30:56 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/18 18:24:24 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int ft_good_fnt(char *line)
 {
-	
 	if (line[0] == 'R')
 	 	ft_resolution(line);
 	if (line[0] == 'c')
@@ -57,14 +56,14 @@ void ft_reset(void)
 int main(int argc, char **argv)
 {
 	ft_reset();
-	//g_mlx.mlx_ptr = mlx_init();
+	g_mlx.mlx_ptr = mlx_init();
 	ft_read(argc, argv);
-	// g_mlx.win = mlx_new_window(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y, "nsahloum_window");
-	// g_mlx.img.img_ptr = mlx_new_image(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y);
-	// g_mlx.img.data = (int *)mlx_get_data_addr(g_mlx.img.img_ptr, &g_mlx.img.bpp, 
-	// &g_mlx.img.size_l, &g_mlx.img.endian);
-	// ft_make_scene();
-	// mlx_put_image_to_window(g_mlx.mlx_ptr, g_mlx.win, g_mlx.img.img_ptr, 0, 0);
-	// mlx_loop(g_mlx.mlx_ptr);
+	g_mlx.win = mlx_new_window(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y, "nsahloum_window");
+	g_mlx.img.img_ptr = mlx_new_image(g_mlx.mlx_ptr, g_amb.res_x, g_amb.res_y);
+	g_mlx.img.data = (int *)mlx_get_data_addr(g_mlx.img.img_ptr, &g_mlx.img.bpp, 
+	&g_mlx.img.size_l, &g_mlx.img.endian);
+	ft_make_scene();
+	mlx_put_image_to_window(g_mlx.mlx_ptr, g_mlx.win, g_mlx.img.img_ptr, 0, 0);
+	mlx_loop(g_mlx.mlx_ptr);
 	return (0);
 }

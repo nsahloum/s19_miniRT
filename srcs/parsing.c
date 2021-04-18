@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 16:19:34 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/18 16:49:20 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/18 18:20:18 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void ft_resolution(char *resolution)
 	i = 0;
 	while (ft_isalpha(resolution[i]))
 		i++;
-    g_amb.res_x = ft_atof(&resolution[i]);
+    g_amb.res_x = ft_atoi(&resolution[i]);
 	i = i + ft_skip_digit(&resolution[i]);
-	g_amb.res_y = ft_atof(&resolution[i]);
+	g_amb.res_y = ft_atoi(&resolution[i]);
 	
 }
 
@@ -47,6 +47,7 @@ void ft_parse_sphere(char *sphere)
 	g_sphere.color_g = ft_atof(&sphere[i]);
 	i = i + ft_skip_digit(&sphere[i]) + 1;
 	g_sphere.color_b = ft_atof(&sphere[i]);
+	g_sphere_active = 1;
 }
 
 void ft_parse_camera(char *camera)

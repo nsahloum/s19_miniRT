@@ -6,7 +6,7 @@
 #    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/22 19:34:36 by nsahloum          #+#    #+#              #
-#    Updated: 2020/12/28 02:11:11 by nsahloum         ###   ########.fr        #
+#    Updated: 2021/04/18 18:40:31 by nsahloum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC =			minirt.c utils.c sphere.c \
 				get_next_line.c \
 				get_next_line_utils.c \
 				parsing.c \
+				coordinate.c \
 
 COMPIL =		$(FLAGS)
 
