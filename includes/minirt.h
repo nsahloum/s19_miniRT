@@ -6,7 +6,7 @@
 /*   By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:35:45 by nsahloum          #+#    #+#             */
-/*   Updated: 2021/04/18 18:49:16 by nsahloum         ###   ########.fr       */
+/*   Updated: 2021/04/19 02:54:18 by nsahloum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
-
+#define PI 3.14159265
 typedef struct	s_img
 {
     void        *img_ptr;
@@ -89,6 +86,7 @@ void ft_parse_camera(char *camera);
 void ft_make_scene(void);
 double ft_coord_x(double x);
 double ft_coord_y(double y);
+double ft_new_size(double size, double coord_z);
 
 int g_sphere_active;
 
